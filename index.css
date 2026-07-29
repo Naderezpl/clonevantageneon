@@ -1,0 +1,136 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 20% 98%;
+    --foreground: 30 10% 12%;
+
+    --card: 40 20% 98%;
+    --card-foreground: 30 10% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 12%;
+
+    --primary: 30 10% 12%;
+    --primary-foreground: 40 20% 98%;
+
+    --secondary: 40 10% 93%;
+    --secondary-foreground: 30 10% 12%;
+
+    --muted: 40 10% 95%;
+    --muted-foreground: 30 5% 45%;
+
+    --accent: 40 10% 93%;
+    --accent-foreground: 30 10% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 10% 90%;
+    --input: 30 10% 88%;
+    --ring: 30 10% 12%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .neon-text-pink {
+    @apply text-[#ff00ff] animate-glow;
+  }
+  
+  .neon-text-blue {
+    @apply text-[#00ffff] animate-glow;
+  }
+  
+  .neon-text-purple {
+    @apply text-[#9b30ff] animate-glow;
+  }
+
+  .neon-text-yellow {
+    @apply text-[#ffff00] animate-glow;
+  }
+
+  .neon-text-green {
+    @apply text-[#00ff00] animate-glow;
+  }
+  
+  .neon-text-red {
+    @apply text-[#ff0000] animate-glow;
+  }
+  
+  .neon-card {
+    @apply bg-muted rounded-lg border border-muted overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20;
+  }
+  
+  .neon-card-image {
+    @apply h-48 w-full object-cover animate-pulse-soft;
+  }
+
+  .neon-tube-text {
+    @apply text-current font-mono;
+    text-shadow: 
+      0 0 7px currentColor, 
+      0 0 10px currentColor, 
+      0 0 21px currentColor, 
+      0 0 42px currentColor;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+  }
+
+  .neon-tube {
+    position: relative;
+    display: inline-block;
+  }
+
+  .neon-tube::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: currentColor;
+    opacity: 0.15;
+    filter: blur(10px);
+    z-index: -1;
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+}
+

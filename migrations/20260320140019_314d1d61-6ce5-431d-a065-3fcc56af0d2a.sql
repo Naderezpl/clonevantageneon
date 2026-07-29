@@ -1,0 +1,8 @@
+
+ALTER TABLE public.site_settings
+ADD COLUMN IF NOT EXISTS video_feed_enabled BOOLEAN DEFAULT false,
+ADD COLUMN IF NOT EXISTS video_feed_count INTEGER DEFAULT 6,
+ADD COLUMN IF NOT EXISTS video_feed_refresh_minutes INTEGER DEFAULT 30,
+ADD COLUMN IF NOT EXISTS video_feed_autoplay_enabled BOOLEAN DEFAULT false,
+ADD COLUMN IF NOT EXISTS store_email TEXT DEFAULT NULL,
+ADD COLUMN IF NOT EXISTS order_email_enabled BOOLEAN DEFAULT true;

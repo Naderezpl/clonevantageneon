@@ -1,0 +1,1 @@
+ALTER TABLE public.site_settings ADD COLUMN IF NOT EXISTS homepage_section_order jsonb DEFAULT '["hero","categories","highlights","featured","onsale","about","testimonials","reviews","promotions","newsletter"]'::jsonb;
